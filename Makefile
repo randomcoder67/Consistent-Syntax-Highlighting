@@ -1,0 +1,13 @@
+normal:
+	cp "${HOME}/.config/Code - OSS/User/settings.json" "${HOME}/.config/Code - OSS/User/settings.json.old"
+	cp "VSCode/settings.json" "${HOME}/.config/Code - OSS/User/settings.json" 
+	cp "micro/syntax/"* "${HOME}/.config/micro/syntax/"
+	cp "micro/colorschemes/"* "${HOME}/.config/micro/colorschemes/"
+	mkdir -p "${HOME}/.local/share/gtksourceview-3.0/styles"
+	mkdir -p "${HOME}/.local/share/gtksourceview-3.0/langauge-specs"
+	mkdir -p "${HOME}/.local/share/gtksourceview-4/styles"
+	mkdir -p "${HOME}/.local/share/gtksourceview-4/langauge-specs"
+	cp "GTKSourceView/styles/"* "${HOME}/.local/share/gtksourceview-3.0/styles/"
+	cp "GTKSourceView/styles/"* "${HOME}/.local/share/gtksourceview-4/styles/"
+	cp "GTKSourceView/language-specs/"* "${HOME}/.local/share/gtksourceview-3.0/language-specs/"
+	cp "GTKSourceView/language-specs/"* "${HOME}/.local/share/gtksourceview-4/language-specs/"

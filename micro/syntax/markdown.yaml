@@ -1,0 +1,142 @@
+filetype: markdown
+
+detect:
+    filename: "\\.(livemd|md|mkd|mkdn|markdown)$"
+
+rules:
+    # Tables (Github extension)
+    - type: ".*[ :]\\|[ :].*"
+
+      # quotes
+    - statement:  "^>.*"
+
+      # Emphasis
+    - type: "(^|[[:space:]])(_[^ ][^_]*_|\\*[^ ][^*]*\\*)"
+
+      # Strong emphasis
+    - type: "(^|[[:space:]])(__[^ ][^_]*__|\\*\\*[^ ][^*]*\\*\\*)"
+
+      # strike-through
+    - type: "(^|[[:space:]])~~[^ ][^~]*~~"
+
+      # horizontal rules
+    - special: "^(---+|===+|___+|\\*\\*\\*+)\\s*$"
+
+      # headlines
+    #- special:  "^#{1,6}.*"
+
+      # lists
+    - identifier:   "^[[:space:]]*[\\*+-] |^[[:space:]]*[0-9]+\\. "
+
+      # misc
+    - preproc:   "(\\(([CcRr]|[Tt][Mm])\\)|\\.{3}|(^|[[:space:]])\\-\\-($|[[:space:]]))"
+
+      # links
+    - constant: "\\[[^]]+\\]"
+    - constant: "\\[([^][]|\\[[^]]*\\])*\\]\\([^)]+\\)"
+
+      # images
+    - underlined: "!\\[[^][]*\\](\\([^)]+\\)|\\[[^]]+\\])"
+
+      # urls
+    - underlined: "https?://[^ )>]+"
+
+    - special: "^```$"
+
+    #- special:
+    #    start: "`"
+    #    end: "`"
+    #    rules: []
+            
+    - comment: 
+        start: "^```[ ]?(py|python|python3|python 3)[ ]?$"
+        end: "^```"
+        rules: 
+            - default: ".*"
+            - include: "python" 
+    
+    - comment: 
+        start: "^```[ ]?(c)[ ]?$"
+        end: "^```"
+        rules: 
+            - default: ".*"
+            - include: "c" 
+    
+    - comment: 
+        start: "^```[ ]?(go|golang)[ ]?$"
+        end: "^```"
+        rules: 
+            - default: ".*"
+            - include: "go" 
+    
+    - comment: 
+        start: "^```[ ]?(js|javascript)[ ]?$"
+        end: "^```"
+        rules: 
+            - default: ".*"
+            - include: "js" 
+        
+    - comment: 
+        start: "^```[ ]?(java)[ ]?$"
+        end: "^```"
+        rules: 
+            - default: ".*"
+            - include: "java" 
+        
+    - comment: 
+        start: "^```[ ]?(json)[ ]?$"
+        end: "^```"
+        rules: 
+            - default: ".*"
+            - include: "json" 
+        
+    - comment: 
+        start: "^```[ ]?(xml)[ ]?$"
+        end: "^```"
+        rules: 
+            - default: ".*"
+            - include: "xml" 
+        
+    - comment: 
+        start: "^```[ ]?(lua)[ ]?$"
+        end: "^```"
+        rules: 
+            - default: ".*"
+            - include: "lua" 
+        
+    - comment: 
+        start: "^```[ ]?(cpp|c[+][+])[ ]?$"
+        end: "^```"
+        rules: 
+            - default: ".*"
+            - include: "c++" 
+        
+    - comment: 
+        start: "^```[ ]?(sh|shell|bash)[ ]?$"
+        end: "^```"
+        rules: 
+            - default: ".*"
+            - include: "shell" 
+        
+    - comment: 
+        start: "^```[ ]?(html)[ ]?$"
+        end: "^```"
+        rules: 
+            - default: ".*"
+            - include: "html" 
+    
+    - comment: 
+        start: "^```[ ]?(css)[ ]?$"
+        end: "^```"
+        rules: 
+            - default: ".*"
+            - include: "css" 
+
+    - markdown.header.four:  "^####[^#]+"
+    - markdown.header.one:  "^#[^#]+"
+    - markdown.header.two:  "^##[^#]+"
+    - markdown.header.three:  "^###[^#]+"
+    - markdown.header.five:  "^#####[^#]+"
+    - markdown.header.six:  "^######[^#]+"
+    
+    - markdown.line.break: "[ \\t]{2}$"

@@ -1,0 +1,43 @@
+filetype: java
+
+detect:
+    filename: "\\.java$"
+
+rules:
+    - type: "\\b(boolean|byte|char|double|float|int|long|short|this|transient|void)\\b"
+
+    - type: "\\b(abstract|class|extends|final|implements|instanceof|interface|native|private|protected|public|static|strictfp|super|synchronized|throws|volatile)\\b"
+    - preproc: "\\b(import|package)\\b"
+    - constant.bool: "\\b(true|false)\\b"
+    - constant.nil: "\\b(null)\\b"
+    - constant.number: "\\b[0-9]+\\b"
+
+    - constant.string:
+        start: "\""
+        end: "\""
+        skip: "\\\\."
+        rules:
+            - constant.specialChar: "\\\\."
+
+    - constant.string:
+        start: "'"
+        end: "'"
+        skip: "\\\\."
+        rules:
+            - preproc: "..+"
+            - constant.specialChar: "\\\\."
+
+    - comment:
+        start: "//"
+        end: "$"
+        rules: []
+
+    - comment:
+        start: "/\\*"
+        end: "\\*/"
+        rules: []
+    
+    - function: "[a-zA-Z0-9_]*[ ]?\\("
+    - default: "\\("
+    - statement: "\\b(new|break|case|catch|continue|default|do|else|finally|for|if|return|switch|throw|try|while)\\b"
+

@@ -15,10 +15,10 @@ Currently Supported Languages:
 * Lua - DONE
 * C++ - DONE
 * Bash - DONE 
-* Python 3 - 
+* Python 3 - DONE 
 * HTML - 
 * CSS - 
-* Markdown - 
+* Markdown - DONE 
 
 Planned: 
 * Support for [ranger](https://github.com/ranger/ranger) code preview and [bat](https://github.com/sharkdp/bat) file viewing  

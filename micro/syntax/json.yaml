@@ -1,0 +1,40 @@
+filetype: json
+
+detect:
+    filename: "\\.json$"
+    header: "^\\{$"
+
+rules:
+    - json.constant.number: "\\b[-+]?([1-9][0-9]*|0[0-7]*|0x[0-9a-fA-F]+)([uU][lL]?|[lL][uU]?)?\\b"
+    - json.constant.number: "\\b[-+]?([0-9]+\\.[0-9]*|[0-9]*\\.[0-9]+)([EePp][+-]?[0-9]+)?[fFlL]?"
+    - json.constant.number: "\\b[-+]?([0-9]+[EePp][+-]?[0-9]+)[fFlL]?"
+    - constant: "\\b(null)\\b"
+    - constant: "\\b(true|false)\\b"
+
+    - statement: "\\\"(\\\\\"|[^\"])*\\\"[[:space:]]*:\"  \"'(\\'|[^'])*'[[:space:]]*:"
+    - constant: "\\\\u[0-9a-fA-F]{4}|\\\\[bfnrt'\"/\\\\]"
+    
+    
+    - json.value.string:
+        start: "\""
+        end: "\""
+        rules:
+            - json.punctuation: ""
+            - escape: "[\\\\][a-z]"
+            - escape: "[\\\\][a-z][0-9]{4}"
+    - json.key.string:
+        start: "[^:] \"[^:,]"
+        end: "\""
+        skip: "t"
+        rules: [] 
+        
+    - json.value.string:
+        start: "\\["
+        end: "\\]"
+        skip: "t"
+        rules: 
+            - escape: "[\\\\][a-z]"
+            - escape: "[\\\\][a-z][0-9]{4}"
+        
+    - json.punctuation: ",|:"
+    

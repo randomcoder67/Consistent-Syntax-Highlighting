@@ -1,0 +1,41 @@
+filetype: xml
+
+detect:
+    filename: "\\.(xml|sgml?|rng|svg|plist)$"
+    header: "<\\?xml.*\\?>"
+
+rules:
+    - xml.preproc:
+        start: "<!"
+        end: "[/]?>"
+        rules: 
+            - constant.string:
+                start: "\""
+                end: "\""
+                rules: []
+
+    - comment:
+        start: "<!--"
+        end: "-->"
+        rules: []
+
+    - symbol.tag:
+        start: "<\\??"
+        end: "\\??>"
+        rules:
+            - xml.identifier:
+                start: " "
+                end: "="
+                rules: []
+            - constant.string:
+                start: "\""
+                end: "\""
+                skip: "\\\\."
+                rules:
+                    - constant.specialChar: "\\\\."
+            - constant.string:
+                start: "'"
+                end: "'"
+                skip: "\\\\."
+                rules:
+                    - constant.specialChar: "\\\\."
