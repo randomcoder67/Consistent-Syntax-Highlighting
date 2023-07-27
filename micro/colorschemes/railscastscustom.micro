@@ -88,3 +88,7 @@ color-link cpp.namespace.name "#519f50,bold"
 color-link cpp.namespace "#da4939"
 color-link cpp.before.colon "#6d9cbe,bold"
 color-link cpp.colon "#f9f7f3"
+
+# C
+
+color-link c.identifier "#e6e1dc,#2b2b2b"

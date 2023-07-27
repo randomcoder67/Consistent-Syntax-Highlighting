@@ -26,6 +26,10 @@ Planned:
 * Make script which allows quick generation of new colourschemes  
 * Try to implement VSCode style "nested bracket colours" to other editors  
 
+## Screenshots
+
+![Example screenshot with gamesUI.c from MediaUI program](screenshot1.png)
+
 ## Setup 
 
 ### Requirements 
@@ -42,5 +46,3 @@ At least one of the listed text editors.
 micro: `Ctrl-e` to bring up command prompt, and `set colorscheme railscastscustom` to set correct theme  
 VSCode: Should work automatically  
 GTKSourceView Programs: Set the theme to `Railscasts Custom`  
-
-## Screenshots 

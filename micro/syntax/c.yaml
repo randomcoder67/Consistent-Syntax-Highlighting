@@ -4,7 +4,7 @@ detect:
     filename: "(\\.(c|C)$|\\.(h|H)$|\\.ii?$|\\.(def)$)"
 
 rules:
-    - identifier: "\\b[A-Z_][0-9A-Z_]+\\b"
+    - c.identifier: "\\b[A-Z_][0-9A-Z_]+\\b"
     - type: "\\b(float|double|bool|char|int|short|long|enum|void|struct|union|typedef|(un)?signed|inline)\\b"
     - type: "\\b((s?size)|((u_?)?int(8|16|32|64|ptr)))_t\\b"
     - type: "\\b[a-z_][0-9a-z_]+(_t|_T)\\b"
