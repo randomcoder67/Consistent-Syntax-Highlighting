@@ -80,7 +80,7 @@
         (?:[1-9][0-9]*|\*)?     # width
         (?:\.\-?(?:[0-9]+|\*))? # precision
         (?:hh|ll|[hlLqjzt])?    # length modifier
-        [diouxXeEfFgGaAcsCSpnm] # conversion specifier
+        [diouxXeEfFgGaAbcsCSpnm] # conversion specifier
       </match>
     </context>
 
