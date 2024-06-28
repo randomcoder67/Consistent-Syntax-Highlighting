@@ -1,6 +1,6 @@
 normal:
-	cp "${HOME}/.config/Code - OSS/User/settings.json" "${HOME}/.config/Code - OSS/User/settings.json.old"
-	cp "VSCode/settings.json" "${HOME}/.config/Code - OSS/User/settings.json" 
+	#cp "${HOME}/.config/Code - OSS/User/settings.json" "${HOME}/.config/Code - OSS/User/settings.json.old"
+	#cp "VSCode/settings.json" "${HOME}/.config/Code - OSS/User/settings.json"
 	cp "micro/syntax/"* "${HOME}/.config/micro/syntax/"
 	cp "micro/colorschemes/"* "${HOME}/.config/micro/colorschemes/"
 	mkdir -p "${HOME}/.local/share/gtksourceview-3.0/styles"

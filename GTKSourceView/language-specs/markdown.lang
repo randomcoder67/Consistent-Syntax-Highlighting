@@ -566,9 +566,9 @@
         <context ref="link-definition"/>
         <context ref="inline-image"/>
         <context ref="reference-image"/>
-        <context ref="underscores-emphasis"/>
+        <!-- <context ref="underscores-emphasis"/> -->
         <context ref="asterisks-emphasis"/>
-        <context ref="underscores-strong-emphasis"/>
+        <!-- <context ref="underscores-strong-emphasis"/> -->
         <context ref="asterisks-strong-emphasis"/>
         <context ref="backslash-escape"/>
         <context ref="line-break"/>
